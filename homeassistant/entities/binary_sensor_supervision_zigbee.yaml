@@ -1,1 +1,6 @@
+type: entity
+entity: binary_sensor.supervision_zigbee_global
+name: 🧠 ZigBee
+icon: mdi:zigbee
+state_color: true
 # Adapter
