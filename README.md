@@ -171,6 +171,7 @@ entity: binary_sensor.supervision_zigbee_global
 name: 🧠 ZigBee
 icon: mdi:zigbee
 state_color: true
+
 📜 Licence
 Projet sous licence MIT.
 Vous êtes libre de le modifier, partager et l'intégrer à vos projets.
