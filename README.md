@@ -46,7 +46,7 @@ La supervision ZigBee repose sur les capteurs :
 
 sensor.nom_du_capteur_last_seen
 
-Voici comment les activer **uniquement avec Zigbee2MQTT
+Voici comment les activer uniquement avec Zigbee2MQTT
 ---
 
 # 🐝 1️⃣ Activer le `last_seen` dans Zigbee2MQTT 
@@ -103,8 +103,6 @@ name: Dernière communication
 ✔️ Méthode alternative si vous utilisez des attributs
 Pour afficher l’attribut directement :
 
-yaml
-Copier le code
 type: custom:template-entity-row
 entity: sensor.nom_du_capteur
 name: Dernier contact
@@ -113,8 +111,6 @@ state: >
 🟢 Ce que vous devez obtenir
 Une entité qui ressemble à :
 
-perl
-Copier le code
 sensor.detecteur_salon_last_seen
 state: "2025-02-15T12:32:11+01:00"
 C’est ce capteur qui est utilisé par la supervision ZigBee pour décider si un appareil est :
@@ -125,6 +121,7 @@ C’est ce capteur qui est utilisé par la supervision ZigBee pour décider si u
 
 
 ---
+
 
 # 🧠 Fonctionnement général
 
