@@ -118,6 +118,17 @@ Ou collez le code dans une vue existante.
 
 ---
 
+## 📸 Aperçu du tableau de bord ZigBee
+![Tableau de bord](images/tableau_de_bord.png)
+
+## 📨 Notification Telegram
+![Notification Telegram](images/telegram.png)
+
+## 📄 Exemple de vue complète
+![Vue HA](images/info_zigbee.png)
+
+---
+
 # 🖼️ Exemple de vue (avec capteurs fictifs)
 
 ```yaml
