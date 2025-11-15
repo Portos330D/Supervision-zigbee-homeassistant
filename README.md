@@ -124,18 +124,7 @@ Ou collez le code dans une vue existante.
 
 ---
 
-## 📸 Aperçu du tableau de bord ZigBee
-![Tableau de bord](images/tableau_de_bord.png)
-
-## 📨 Notification Telegram
-![Notification Telegram](images/telegram.png)
-
-## 📄 Exemple de vue complète
-![Vue HA](images/info_zigbee.png)
-
----
-
-### 6. Activer l’input_boolean
+### 5. Activer l’input_boolean
 
 Le fichier suivant active/désactive la supervision ZigBee :
 
@@ -146,6 +135,16 @@ Copiez-le dans votre dossier input_boolean et redémarrez Home Assistant.
 
 ---
 
+## 📸 Aperçu du tableau de bord ZigBee
+![Tableau de bord](images/tableau_de_bord.png)
+
+## 📨 Notification Telegram
+![Notification Telegram](images/telegram.png)
+
+## 📄 Exemple de vue complète
+![Vue HA](images/info_zigbee.png)
+
+---
 
 # 🖼️ Exemple de vue (avec capteurs fictifs)
 
