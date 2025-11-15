@@ -1,4 +1,4 @@
-![Supervision ZigBee](www/banner.png)
+
 
 # 🐝 Supervision ZigBee – Home Assistant  
 Surveillez l’état complet de votre réseau ZigBee sous Home Assistant grâce à une supervision avancée basée sur `last_seen`.
