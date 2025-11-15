@@ -22,16 +22,20 @@ supervision-zigbee-homeassistant/
 ├── README.md
 ├── LICENSE
 ├── SECRETS_EXAMPLE.yaml
+├── images/
+│   ├── tableau-de-bord.png
+│   ├── telegram.png
+│   └── CV.png
 ├── homeassistant/
-│ ├── template/
-│ │ └── supervision_zigbee.yaml
-│ ├── automations/
-│ │ ├── zigbee_alert.yaml
-│ │ └── zigbee_disable_buttons.yaml
-│ ├── dashboards/
-│ │ └── zigbee_view.yaml
-│ └── entities/
-│ └── binary_sensor_supervision_zigbee.yaml
+    ├── template/
+    │   └── supervision_zigbee.yaml
+    ├── automations/
+    │   ├── zigbee_alert.yaml
+    │   └── zigbee_disable_buttons.yaml
+    ├── dashboards/
+    │   └── zigbee_view.yaml
+    └── entities/
+        └── binary_sensor_supervision_zigbee.yaml
 
 
 ---
