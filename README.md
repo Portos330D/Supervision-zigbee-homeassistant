@@ -35,8 +35,6 @@ supervision-zigbee-homeassistant/
 ├── www/
 │ └── banner.png
 
-yaml
-Copier le code
 
 ---
 
@@ -96,8 +94,6 @@ sensor.capteur_1_last_seen
 sensor.capteur_2_last_seen
 sensor.fenetre_cuisine_last_seen
 
-yaml
-Copier le code
 
 par vos entités **réelles**.
 
@@ -109,8 +105,6 @@ Ajoutez dans `secrets.yaml` :
 telegram_bot_token: MON_BOT_TOKEN
 telegram_chat_id: MON_CHAT_ID
 
-yaml
-Copier le code
 
 Assurez-vous que l’intégration Telegram est configurée dans Home Assistant.
 
@@ -121,8 +115,6 @@ Importer le contenu de `dashboards/zigbee_view.yaml` :
 
 Configuration → Tableaux de bord → Ajouter une vue → Mode YAML
 
-yaml
-Copier le code
 
 Ou collez le code dans une vue existante.
 
