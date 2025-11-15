@@ -32,8 +32,6 @@ supervision-zigbee-homeassistant/
 │ │ └── zigbee_view.yaml
 │ └── entities/
 │ └── binary_sensor_supervision_zigbee.yaml
-├── www/
-│ └── banner.png
 
 
 ---
@@ -156,8 +154,7 @@ entities:
 (Voir le fichier complet dans dashboards/zigbee_view.yaml.)
 
 🧩 Capteur résumé ZigBee (à ajouter dans Lovelace)
-yaml
-Copier le code
+
 type: entity
 entity: binary_sensor.supervision_zigbee_global
 name: 🧠 ZigBee
