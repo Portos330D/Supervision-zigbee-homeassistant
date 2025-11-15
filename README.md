@@ -166,17 +166,6 @@ Vous êtes libre de le modifier, partager et l'intégrer à vos projets.
 
 🤝 Contributions
 Pull requests bienvenues.
-Vous pouvez proposer :
-
-Support ZHA
-
-Version anglaise du dashboard
-
-Détection avancée ZHA / Zigbee2MQTT
-
-Tableaux de bord alternatifs
-
-Badges Home Assistant
 
 Bonne utilisation ! 🐝🔥
 N'hésitez pas à ⭐ le dépôt si cela vous aide 🙏
