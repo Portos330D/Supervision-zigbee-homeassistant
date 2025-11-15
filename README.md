@@ -135,6 +135,18 @@ Ou collez le code dans une vue existante.
 
 ---
 
+### 6. Activer l’input_boolean
+
+Le fichier suivant active/désactive la supervision ZigBee :
+
+bash
+Copier le code
+homeassistant/input_boolean/supervision_zigbee.yaml
+Copiez-le dans votre dossier input_boolean et redémarrez Home Assistant.
+
+---
+
+
 # 🖼️ Exemple de vue (avec capteurs fictifs)
 
 ```yaml
