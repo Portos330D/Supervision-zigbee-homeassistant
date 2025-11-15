@@ -1,1 +1,32 @@
+title: 🧠 Supervision ZigBee
+icon: mdi:zigbee
+type: entities
+show_header_toggle: false
+
+entities:
+  - type: section
+    label: 📦 Détecteurs
+  - type: custom:template-entity-row
+    entity: sensor.detecteur_entree_last_seen
+    name: 🚪 Détecteur entrée (EXEMPLE)
+    state: >
+      {% set l = as_timestamp(states('sensor.detecteur_entree_last_seen'), 0) %}
+      {% if l > 0 and (as_timestamp(now()) - l) < 86400 %}
+        🟢 En ligne
+      {% else %}
+        🔴 Hors ligne
+      {% endif %}
+
+  - type: section
+    label: 🪟 Ouvertures
+  - type: custom:template-entity-row
+    entity: sensor.fenetre_cuisine_last_seen
+    name: 🪟 Fenêtre cuisine (EXEMPLE)
+    state: >
+      {% set l = as_timestamp(states('sensor.fenetre_cuisine_last_seen'), 0) %}
+      {% if l > 0 and (as_timestamp(now()) - l) < 86400 %}
+        🟢 En ligne
+      {% else %}
+        🔴 Hors ligne
+      {% endif %}
 # Adapter
