@@ -1,1 +1,49 @@
-# Adapter
+template:
+  - binary_sensor:
+      - name: "Supervision ZigBee"
+        unique_id: supervision_zigbee_global
+        device_class: connectivity
+        state: >
+          {% set seuil = 86400 %}
+          {% set capteurs = [
+            'sensor.capteur_1_last_seen',
+            'sensor.capteur_2_last_seen',
+            'sensor.capteur_3_last_seen'
+          ] %}
+          {% set now_ts = as_timestamp(now()) %}
+          {% set hors_ligne = [] %}
+          {% for c in capteurs %}
+            {% set l = states(c) %}
+            {% if l not in ['unknown', 'unavailable', 'none', '', None] %}
+              {% set ts = as_timestamp(as_datetime(l, default=None), 0) %}
+              {% if (now_ts - ts) > seuil or ts == 0 %}
+                {% set hors_ligne = hors_ligne + [c] %}
+              {% endif %}
+            {% else %}
+              {% set hors_ligne = hors_ligne + [c] %}
+            {% endif %}
+          {% endfor %}
+          {{ 'on' if (hors_ligne | count == 0) else 'off' }}
+
+        attributes:
+          hors_ligne: >
+            {% set seuil = 86400 %}
+            {% set now_ts = as_timestamp(now()) %}
+            {% set capteurs = [
+              'sensor.capteur_1_last_seen',
+              'sensor.capteur_2_last_seen',
+              'sensor.capteur_3_last_seen'
+            ] %}
+            {% set hors_ligne = [] %}
+            {% for c in capteurs %}
+              {% set l = states(c) %}
+              {% if l not in ['unknown', 'unavailable', 'none', '', None] %}
+                {% set ts = as_timestamp(as_datetime(l, default=None), 0) %}
+                {% if (now_ts - ts) > seuil or ts == 0 %}
+                  {% set hors_ligne = hors_ligne + [c] %}
+                {% endif %}
+              {% else %}
+                {% set hors_ligne = hors_ligne + [c] %}
+              {% endif %}
+            {% endfor %}
+            {{ hors_ligne }}
