@@ -29,6 +29,8 @@ supervision-zigbee-homeassistant/
 ├── homeassistant/
     ├── template/
     │   └── supervision_zigbee.yaml
+    ├── input_boolean/
+    │   └── supervision_zigbee.yaml
     ├── automations/
     │   ├── zigbee_alert.yaml
     │   └── zigbee_disable_buttons.yaml
