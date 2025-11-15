@@ -1,1 +1,65 @@
+alias: "🔁 Désactivation temporaire – Supervision ZigBee"
+description: "Désactive temporairement les alertes ZigBee via les boutons Telegram."
+trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: "/disable_zigbee_alert_5"
+
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: "/disable_zigbee_alert_60"
+
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: "/disable_zigbee_alert_120"
+
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: "/disable_zigbee_alert_360"
+
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: "/disable_zigbee_alert_1440"
+
+action:
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.supervision_zigbee_active
+
+  - service: telegram_bot.send_message
+    data:
+      message: >-
+        {% set d = trigger.event.data.data %}
+        {% if d == '/disable_zigbee_alert_5' %}⏱ Désactivée 5 min.
+        {% elif d == '/disable_zigbee_alert_60' %}⏱ Désactivée 1 h.
+        {% elif d == '/disable_zigbee_alert_120' %}⏱ Désactivée 2 h.
+        {% elif d == '/disable_zigbee_alert_360' %}⏱ Désactivée 6 h.
+        {% elif d == '/disable_zigbee_alert_1440' %}⏱ Désactivée 24 h.
+        {% endif %}
+
+  - delay:
+      minutes: >-
+        {% set m = {
+          '/disable_zigbee_alert_5':5,
+          '/disable_zigbee_alert_60':60,
+          '/disable_zigbee_alert_120':120,
+          '/disable_zigbee_alert_360':360,
+          '/disable_zigbee_alert_1440':1440
+        } %}
+        {{ m[trigger.event.data.data] }}
+
+  - service: input_boolean.turn_on
+    target:
+      entity_id: input_boolean.supervision_zigbee_active
+
+  - service: telegram_bot.send_message
+    data:
+      message: "✅ Supervision ZigBee réactivée."
+
+mode: restart
 # Adapter
