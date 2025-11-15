@@ -118,7 +118,7 @@ C’est ce capteur qui est utilisé par la supervision ZigBee pour décider si u
 🟢 En ligne
 
 🔴 Hors ligne (pas de contact depuis X secondes/minutes)
-
+```
 
 ---
 
