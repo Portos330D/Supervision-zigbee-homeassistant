@@ -40,6 +40,90 @@ supervision-zigbee-homeassistant/
         └── binary_sensor_supervision_zigbee.yaml
 
 
+## 🔍 Activer le `last_seen` pour Zigbee2MQTT
+
+La supervision ZigBee repose sur les capteurs :
+
+sensor.nom_du_capteur_last_seen
+
+Voici comment les activer **uniquement avec Zigbee2MQTT
+---
+
+# 🐝 1️⃣ Activer le `last_seen` dans Zigbee2MQTT 
+
+1. Ouvrez **Zigbee2MQTT**
+2. Allez dans **Settings → Advanced**
+3. Recherchez la section **Last Seen**
+4. Activez :
+
+- **Expose last seen** → `ISO_8601`
+- **Last seen accuracy** → `minute` *(recommandé)*
+- **Include last_seen** → activé si présent
+
+5. Redémarrez Zigbee2MQTT
+
+Zigbee2MQTT transmettra alors automatiquement un champ :
+
+last_seen: 2025-02-15T12:32:11+01:00
+
+Et Home Assistant créera automatiquement pour chaque appareil :
+
+sensor.nom_de_l_appareil_last_seen
+
+➡️ **Aucune configuration YAML n’est nécessaire.**
+
+---
+
+# 🏠 2️⃣ Voir le `last_seen` dans Home Assistant
+
+Une fois activé dans Zigbee2MQTT :
+
+### ✔️ Méthode 1 — Via l’interface (Appareils & Services)
+
+1. Aller dans **Paramètres → Appareils & Services**
+2. Ouvrir n’importe quel **périphérique ZigBee**
+3. Cliquer sur **Appareils Zigbee2MQTT**
+4. Vous verrez dans les attributs :
+
+last_seen: 2025-02-15T12:32:11+01:00
+
+Si HA a détecté le sensor `*_last_seen`, il apparaîtra dans la liste des entités du périphérique.
+
+---
+
+# 🧩 3️⃣ Ajouter le `last_seen` dans Lovelace
+
+### ✔️ Méthode automatique (si HA a créé le sensor)
+
+Dans une carte **Entities**, ajoutez simplement :
+
+```yaml
+entity: sensor.nom_du_capteur_last_seen
+name: Dernière communication
+✔️ Méthode alternative si vous utilisez des attributs
+Pour afficher l’attribut directement :
+
+yaml
+Copier le code
+type: custom:template-entity-row
+entity: sensor.nom_du_capteur
+name: Dernier contact
+state: >
+  {{ state_attr('sensor.nom_du_capteur', 'last_seen') }}
+🟢 Ce que vous devez obtenir
+Une entité qui ressemble à :
+
+perl
+Copier le code
+sensor.detecteur_salon_last_seen
+state: "2025-02-15T12:32:11+01:00"
+C’est ce capteur qui est utilisé par la supervision ZigBee pour décider si un appareil est :
+
+🟢 En ligne
+
+🔴 Hors ligne (pas de contact depuis X secondes/minutes)
+
+
 ---
 
 # 🧠 Fonctionnement général
