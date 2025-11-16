@@ -53,14 +53,16 @@ Voici comment les activer uniquement avec Zigbee2MQTT
 
 1. Ouvrez **Zigbee2MQTT**
 2. Allez dans **Settings → Advanced**
-3. Recherchez la section **Last Seen**
-4. Activez :
+3. Activez :
 
 - **Expose last seen** → `ISO_8601`
-- **Last seen accuracy** → `minute` *(recommandé)*
+
+4. Allez dans **Settings → Disponibility**
+5. Cochez :
+   
 - **Include last_seen** → activé si présent
 
-5. Redémarrez Zigbee2MQTT
+6. Redémarrez Zigbee2MQTT
 
 Zigbee2MQTT transmettra alors automatiquement un champ :
 
